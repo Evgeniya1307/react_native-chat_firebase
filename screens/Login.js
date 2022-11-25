@@ -10,6 +10,7 @@ export default function Login({navigation}){
     const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //при нажатии 
   const onHandleLogin = () => {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password) //фу-ия поможет аутентифицировать пользователя с помощью эл почты и пароля
@@ -22,7 +23,7 @@ export default function Login({navigation}){
     <View style={styles.container}>
       <Image source={backImage} style={styles.backImage} />
       <View style={styles.whiteSheet} />
-      <SafeAreaView style={styles.form}>
+      <SafeAreaView style={styles.form}> {/*безопасная область */}
         <Text style={styles.title}>Log In</Text>
          <TextInput
         style={styles.input}
@@ -49,7 +50,7 @@ export default function Login({navigation}){
       </TouchableOpacity>
       <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center'}}>
         <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Don't have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Signup")}>{/*кнопка для перехода к экрану регистрации */}
           <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Sign Up</Text>
         </TouchableOpacity>
       </View>
